@@ -1,0 +1,18 @@
+syntax = "proto3";
+package protos;
+option go_package="/protocol";
+
+service Calculate{
+    rpc Add (TwoNumRequest) returns (OneResResponse) {}
+    rpc Mul (TwoNumRequest) returns (OneResResponse) {}
+}
+
+message TwoNumRequest{
+    string name=1;
+    float a = 2;
+    float b = 3;
+}
+message OneResResponse{
+    string reply = 1;
+    float res = 2;
+}
